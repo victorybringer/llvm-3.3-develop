@@ -1,9 +1,0 @@
-fromList [ ("@archive_read_data_block",
-            fromList [ (BrokenContractEscape, "%_a")
-                     , (BrokenContractEscape, "%buff")
-                     , (BrokenContractEscape, "%offset")
-                     , (BrokenContractEscape, "%size")
-                     ]
-           )
-         , ("@__archive_read_register_format", fromList [ (ArgumentEscape 0, "%read_data") ] )
-         ]

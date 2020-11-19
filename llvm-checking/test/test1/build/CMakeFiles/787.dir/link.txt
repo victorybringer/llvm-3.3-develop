@@ -1,2 +1,0 @@
-/usr/bin/ar qc lib787.a  CMakeFiles/787.dir/787.c.o
-/usr/bin/ranlib lib787.a

@@ -1,2 +1,0 @@
-/usr/bin/ar qc lib574.a  CMakeFiles/574.dir/574.c.o
-/usr/bin/ranlib lib574.a

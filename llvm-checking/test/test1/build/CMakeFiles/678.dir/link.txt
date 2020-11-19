@@ -1,2 +1,0 @@
-/usr/bin/ar qc lib678.a  CMakeFiles/678.dir/678.c.o
-/usr/bin/ranlib lib678.a

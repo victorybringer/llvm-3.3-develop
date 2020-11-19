@@ -1,6 +1,0 @@
-fromList [ ("@pp", fromList [ "@p" ])
-         , ("@r", fromList [ "@b" ])
-         , ("@q", fromList [ "@a" ])
-         , ("@p", fromList [ "@a" ])
-         , ("%ptr1", fromList [ "@p" ])
-         ]

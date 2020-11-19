@@ -1,2 +1,0 @@
-/usr/bin/ar qc lib449.a  CMakeFiles/449.dir/449.c.o
-/usr/bin/ranlib lib449.a

@@ -1,3 +1,0 @@
-fromList [ ("target", (fromList [], ReturnConstantInt (fromList [-1])))
-         , ("errGen", (fromList [], ReturnConstantInt (fromList [-1,1])))
-         ]

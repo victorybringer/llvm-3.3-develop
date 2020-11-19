@@ -1,1 +1,0 @@
-fromList [(("f", "s"), fromList [("%struct.S*", [AccessDeref,AccessField 1])])]

@@ -1,3 +1,0 @@
-fromList [ ("@q", fromList ["@z"])
-         , ("@p", fromList ["@z"])
-         ]

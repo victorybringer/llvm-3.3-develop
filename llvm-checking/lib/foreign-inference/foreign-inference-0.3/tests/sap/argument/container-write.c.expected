@@ -1,3 +1,0 @@
-fromList [ (("add_component","comp"), fromList [(0,"%struct.S*",[AccessDeref,AccessField 0,AccessDeref,AccessField 0,AccessDeref,AccessField 0])])
-         , (("list_push","comp"),fromList [(0,"%struct.list_t*",[AccessDeref,AccessField 0,AccessDeref,AccessField 0])])
-         ]

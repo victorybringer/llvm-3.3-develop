@@ -1,3 +1,0 @@
-fromList [ ("@g", fromList [(DirectEscape, "%p")] )
-         , ("@f", fromList [(DirectEscape, "%q")] )
-         ]

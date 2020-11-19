@@ -1,1 +1,0 @@
-fromList [ ("@FT_Stream_Open", fromList ["%filepathname"]) ]

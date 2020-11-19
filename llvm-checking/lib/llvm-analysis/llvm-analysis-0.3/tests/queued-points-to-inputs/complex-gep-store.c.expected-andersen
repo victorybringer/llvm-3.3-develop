@@ -1,4 +1,0 @@
-fromList [ ("@p", fromList ["@a"])
-         , ("@r", fromList ["@b"])
-         , ("@global", fromList ["@a"])
-         ]

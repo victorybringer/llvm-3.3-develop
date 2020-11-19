@@ -1,3 +1,0 @@
-fromList [ ("@transfer", fromList ["%x"])
-         , ("@transfer2", fromList ["%x"])
-         ]

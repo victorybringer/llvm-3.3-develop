@@ -1,3 +1,0 @@
-fromList [ ("@fldEsc", fromList [(DirectEscape, "%s.<0>")])
-         , ("@f", fromList [(DirectEscape, "%p")])
-         ]

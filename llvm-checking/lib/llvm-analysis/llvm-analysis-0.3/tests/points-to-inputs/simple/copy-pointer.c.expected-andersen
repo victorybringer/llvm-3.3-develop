@@ -1,3 +1,0 @@
-fromList [ ("@p", fromList ["@a", "@b", "%arg.addr"])
-         , ("@q", fromList ["@a", "@b", "%arg.addr"])
-         ]

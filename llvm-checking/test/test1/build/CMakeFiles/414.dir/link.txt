@@ -1,2 +1,0 @@
-/usr/bin/ar qc lib414.a  CMakeFiles/414.dir/414.c.o
-/usr/bin/ranlib lib414.a

@@ -1,2 +1,0 @@
-fromList [ ("target", (fromList [ "reportError", "clean" ], ReturnConstantInt (fromList [-30])))
-         ]

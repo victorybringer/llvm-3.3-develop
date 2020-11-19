@@ -1,3 +1,0 @@
-fromList [ ("learnFrom", (fromList [ "reportError" ], ReturnConstantInt (fromList [-22])))
-         , ("target", (fromList [ "reportError" ], ReturnConstantInt (fromList [-50])))
-         ]

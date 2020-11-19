@@ -1,3 +1,0 @@
-fromList [ ("learnFrom", (fromList [ "g_set_error" ], ReturnConstantInt (fromList [ 0 ])))
-         , ("get_contents_stdio", (fromList [ "g_set_error" ], ReturnConstantInt (fromList [ 0 ])))
-         ]

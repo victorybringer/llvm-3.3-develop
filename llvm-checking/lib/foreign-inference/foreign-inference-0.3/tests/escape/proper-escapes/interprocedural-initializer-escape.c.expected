@@ -1,3 +1,0 @@
-fromList [ ("@g", fromList [(DirectEscape, "%i")])
-         , ("@f", fromList [(ArgumentEscape 0, "%i")])
-         ]

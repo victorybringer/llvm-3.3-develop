@@ -1,2 +1,0 @@
-/usr/bin/ar qc lib448.a  CMakeFiles/448.dir/448.c.o
-/usr/bin/ranlib lib448.a
