@@ -21,6 +21,6 @@ RUN cd / && wget https://picture-1257147077.cos.ap-shanghai.myqcloud.com/llvm-ch
 RUN  ln -s  /stack-2.5.1-linux-x86_64/stack /bin/stack && ln -s /z3-4.8.1.016872a5e0f6-x64-ubuntu-14.04/bin/z3  /bin/z3 && pip install wllvm
 
 
-RUN cd /llvm-checking && stack build
+RUN cd /llvm-checking && stack update && stack build
 
 
