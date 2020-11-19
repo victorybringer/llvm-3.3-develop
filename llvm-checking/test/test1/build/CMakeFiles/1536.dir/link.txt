@@ -1,0 +1,2 @@
+/usr/bin/ar qc lib1536.a  CMakeFiles/1536.dir/1536.cpp.o
+/usr/bin/ranlib lib1536.a

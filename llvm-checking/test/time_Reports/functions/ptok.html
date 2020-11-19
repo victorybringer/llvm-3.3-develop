@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html><head><title>ptok [function breakdown]</title>
+<link rel="stylesheet" href="../style.css" type="text/css">
+<link rel="stylesheet" href="../jquery.snippet.css" type="text/css">
+<script type="text/javascript" src="../jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../jquery.snippet.js"></script>
+<script type="text/javascript" src="../highlight.js"></script>
+</head>
+<body>Breakdown of ptok (defined in /root/文档/myTests/bench/time-1.7/time.c)
+<div><ul><li><span class="code-type">i32<a href="#" onclick="editor.highlightText('highlight', 'pages');">pages</a>
+</span>
+</li>
+</ul>
+</div>
+<p>ptok (<span class="code-type">i32</span> pages</span>
+) -> <span class="code-type">i32</span></p>
+<pre id="code" name="code">{
+  static unsigned long ps = 0;
+  unsigned long tmp;
+  static long size = LONG_MAX;
+
+  /* Initialization.  */
+  if (ps == 0)
+    ps = (long) getpagesize ();
+
+  /* Conversion.  */
+  if (pages &gt; (LONG_MAX / ps))
+    {        /* Could overflow.  */
+      tmp = pages / 1024;  /* Smaller first, */
+      size = tmp * ps;    /* then larger.  */
+    }
+  else
+    {        /* Could underflow.  */
+      tmp = pages * ps;    /* Larger first, */
+      size = tmp / 1024;  /* then smaller.  */
+    }
+  return size;
+}</pre>
+<script type="text/javascript">
+$(window).bind("load", function() {
+  $("pre#code").snippet("c", {style: "emacs", showNum: true, startNum: 252});
+  initializeHighlighting();
+  linkCalledFunctions([]);
+  });
+</script>
+</body>
+</html>

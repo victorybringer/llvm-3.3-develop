@@ -1,0 +1,2 @@
+/usr/bin/ar qc lib533.a  CMakeFiles/533.dir/533.c.o
+/usr/bin/ranlib lib533.a

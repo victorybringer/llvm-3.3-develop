@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html><head><title>linear_argv [function breakdown]</title>
+<link rel="stylesheet" href="../style.css" type="text/css">
+<link rel="stylesheet" href="../jquery.snippet.css" type="text/css">
+<script type="text/javascript" src="../jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../jquery.snippet.js"></script>
+<script type="text/javascript" src="../highlight.js"></script>
+</head>
+<body>Breakdown of linear_argv (defined in /root/文档/myTests/bench/time-1.7/time.c)
+<div><ul><li><span class="code-type">i8**<a href="#" onclick="editor.highlightText('highlight', 'argv');">argv</a>
+<span class="code-comment"> /* [ <a href="#" onclick="highlightLines(209, [[220, 'deref'],[221, 'deref']]);">PANotNull </a>
+ ] */ </span> </span>
+</span>
+</li>
+<li>&rarr; <span class="code-comment">/* [] FAAllocator &quot;free&quot; */</span></li>
+</ul>
+</div>
+<p>linear_argv (<span class="code-type">i8**</span> argv</span>
+) -> <span class="code-type">i8*</span></p>
+<pre id="code" name="code">{
+  const char *const *s;    /* Each string in ARGV.  */
+  char *new;      /* Allocated space.  */
+  char *dp;      /* Copy in to destination.  */
+  const char *sp;    /* Copy from source.  */
+  int size;
+
+  /* Find length of ARGV and allocate.  */
+  size = 1;
+  for (s = argv; *s; ++s)
+    size += strlen (*s);
+  new = (char *) malloc (size);
+  if (new == NULL)
+    {
+      fprintf (stderr, &quot;%s: virtual memory exhausted\n&quot;, program_name);
+      return NULL;
+    }
+
+  /* Copy each string in ARGV to the new string.  At the end of
+     each string copy, back up `dp&#39; so that on the next string,
+     the `\0&#39; will be overwritten.  */
+  for (s = argv, sp = *s, dp = new; *s; ++s)
+    {
+      sp = *s;
+      while ((*dp++ = *sp++) != &#39;\0&#39;)
+  /* Do nothing.  */ ;
+      --dp;
+    }
+
+  return new;
+}</pre>
+<script type="text/javascript">
+$(window).bind("load", function() {
+  $("pre#code").snippet("c", {style: "emacs", showNum: true, startNum: 209});
+  initializeHighlighting();
+  linkCalledFunctions([]);
+  });
+</script>
+</body>
+</html>

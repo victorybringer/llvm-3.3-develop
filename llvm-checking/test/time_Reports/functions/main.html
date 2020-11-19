@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html><head><title>main [function breakdown]</title>
+<link rel="stylesheet" href="../style.css" type="text/css">
+<link rel="stylesheet" href="../jquery.snippet.css" type="text/css">
+<script type="text/javascript" src="../jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../jquery.snippet.js"></script>
+<script type="text/javascript" src="../highlight.js"></script>
+</head>
+<body>Breakdown of main (defined in /root/文档/myTests/bench/time-1.7/time.c)
+<div><ul><li><span class="code-type">i32<a href="#" onclick="editor.highlightText('highlight', 'argc');">argc</a>
+</span>
+</li>
+<li><span class="code-type">i8**<a href="#" onclick="editor.highlightText('highlight', 'argv');">argv</a>
+<span class="code-comment"> /* [ <a href="#" onclick="highlightLines(632, [[639, 'deref'],[645, 'arg/noret'],[647, 'arg/noret'],[649, 'arg/noret']]);">PANotNull </a>
+, <a href="#" onclick="highlightLines(632, [[639, 'call']]);">PAEscape </a>
+ ] */ </span> </span>
+</span>
+</li>
+</ul>
+</div>
+<p>main (<span class="code-type">i32</span> argc</span>
+, <span class="code-type">i8**</span> argv</span>
+) -> <span class="code-type">void</span></p>
+<pre id="code" name="code">{
+  const char **command_line;
+  RESUSE res;
+
+  command_line = getargs (argc, argv);
+  run_command (command_line, &amp;res);
+  summarize (outfp, output_format, command_line, &amp;res);
+  fflush (outfp);
+
+  if (WIFSTOPPED (res.waitstatus))
+    exit (WSTOPSIG (res.waitstatus));
+  else if (WIFSIGNALED (res.waitstatus))
+    exit (WTERMSIG (res.waitstatus));
+  else if (WIFEXITED (res.waitstatus))
+    exit (WEXITSTATUS (res.waitstatus));
+}</pre>
+<script type="text/javascript">
+$(window).bind("load", function() {
+  $("pre#code").snippet("c", {style: "emacs", showNum: true, startNum: 632});
+  initializeHighlighting();
+  linkCalledFunctions([['getargs', 'getargs'], ['run_command', 'run_command'], ['summarize', 'summarize']]);
+  });
+</script>
+</body>
+</html>

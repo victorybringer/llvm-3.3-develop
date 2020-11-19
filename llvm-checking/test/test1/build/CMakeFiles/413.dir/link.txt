@@ -1,0 +1,2 @@
+/usr/bin/ar qc lib413.a  CMakeFiles/413.dir/413.c.o
+/usr/bin/ranlib lib413.a

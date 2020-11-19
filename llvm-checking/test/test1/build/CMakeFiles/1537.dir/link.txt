@@ -1,0 +1,2 @@
+/usr/bin/ar qc lib1537.a  CMakeFiles/1537.dir/1537.cpp.o
+/usr/bin/ranlib lib1537.a

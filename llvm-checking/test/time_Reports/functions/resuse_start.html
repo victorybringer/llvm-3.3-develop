@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html><head><title>resuse_start [function breakdown]</title>
+<link rel="stylesheet" href="../style.css" type="text/css">
+<link rel="stylesheet" href="../jquery.snippet.css" type="text/css">
+<script type="text/javascript" src="../jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../jquery.snippet.js"></script>
+<script type="text/javascript" src="../highlight.js"></script>
+</head>
+<body>Breakdown of resuse_start (defined in /root/文档/myTests/bench/time-1.7/resuse.c)
+<div><ul><li><span class="code-type">%struct.RESUSE*<a href="#" onclick="editor.highlightText('highlight', 'resp');">resp</a>
+<span class="code-comment"> /* [ <a href="#" onclick="highlightLines(47, [[51, 'deref']]);">PANotNull </a>
+ ] */ </span> </span>
+</span>
+</li>
+</ul>
+</div>
+<p>resuse_start (<span class="code-type">%struct.RESUSE*</span> resp</span>
+) -> <span class="code-type">void</span></p>
+<pre id="code" name="code">{
+#if HAVE_WAIT3
+  gettimeofday (&amp;resp-&gt;start, (struct timezone *) 0);
+#else
+  long value;
+  struct tms tms;
+
+  value = times (&amp;tms);
+  resp-&gt;start.tv_sec = value / HZ;
+  resp-&gt;start.tv_usec = value % HZ * (1000000 / HZ);
+#endif
+}</pre>
+<script type="text/javascript">
+$(window).bind("load", function() {
+  $("pre#code").snippet("c", {style: "emacs", showNum: true, startNum: 47});
+  initializeHighlighting();
+  linkCalledFunctions([]);
+  });
+</script>
+</body>
+</html>

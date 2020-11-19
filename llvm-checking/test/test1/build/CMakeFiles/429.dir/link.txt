@@ -1,0 +1,2 @@
+/usr/bin/ar qc lib429.a  CMakeFiles/429.dir/429.c.o
+/usr/bin/ranlib lib429.a

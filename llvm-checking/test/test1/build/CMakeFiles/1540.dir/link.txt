@@ -1,0 +1,2 @@
+/usr/bin/ar qc lib1540.a  CMakeFiles/1540.dir/1540.cpp.o
+/usr/bin/ranlib lib1540.a

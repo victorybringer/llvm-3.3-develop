@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html><head><title>usage [function breakdown]</title>
+<link rel="stylesheet" href="../style.css" type="text/css">
+<link rel="stylesheet" href="../jquery.snippet.css" type="text/css">
+<script type="text/javascript" src="../jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../jquery.snippet.js"></script>
+<script type="text/javascript" src="../highlight.js"></script>
+</head>
+<body>Breakdown of usage (defined in /root/文档/myTests/bench/time-1.7/time.c)
+<div><ul><li><span class="code-type">%struct._IO_FILE*<a href="#" onclick="editor.highlightText('highlight', 'stream');">stream</a>
+<span class="code-comment"> /* [ <a href="#" onclick="highlightLines(653, [[657, 'deref'],[662, 'arg/noret']]);">PANotNull </a>
+ ] */ </span> </span>
+</span>
+</li>
+<li><span class="code-type">i32<a href="#" onclick="editor.highlightText('highlight', 'status');">status</a>
+<span class="code-comment"> /* [ <a href="#" onclick="highlightLines(653, [[662, 'arg/noret']]);">PANotNull </a>
+, <a href="#" onclick="highlightLines(653, [[662, 'finalized']]);">PAFinalize </a>
+ ] */ </span> </span>
+</span>
+</li>
+<li>&rarr; <span class="code-comment">/* [] FANoRet */</span></li>
+</ul>
+</div>
+<p>usage (<span class="code-type">%struct._IO_FILE*</span> stream</span>
+, <span class="code-type">i32</span> status</span>
+) -> <span class="code-type">void</span></p>
+<pre id="code" name="code">{
+  fprintf (stream, &quot;\
+Usage: %s [-apvV] [-f format] [-o file] [--append] [--verbose]\n\
+       [--portability] [--format=format] [--output=file] [--version]\n\
+       [--help] command [arg...]\n&quot;,
+     program_name);
+  exit (status);
+}</pre>
+<script type="text/javascript">
+$(window).bind("load", function() {
+  $("pre#code").snippet("c", {style: "emacs", showNum: true, startNum: 653});
+  initializeHighlighting();
+  linkCalledFunctions([]);
+  });
+</script>
+</body>
+</html>

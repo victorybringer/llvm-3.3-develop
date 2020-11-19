@@ -1,0 +1,2 @@
+/usr/bin/ar qc lib1552.a  CMakeFiles/1552.dir/1552.cpp.o
+/usr/bin/ranlib lib1552.a

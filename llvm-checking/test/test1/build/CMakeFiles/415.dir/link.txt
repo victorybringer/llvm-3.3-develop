@@ -1,0 +1,2 @@
+/usr/bin/ar qc lib415.a  CMakeFiles/415.dir/415.c.o
+/usr/bin/ranlib lib415.a

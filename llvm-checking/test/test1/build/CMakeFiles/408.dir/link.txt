@@ -1,0 +1,2 @@
+/usr/bin/ar qc lib408.a  CMakeFiles/408.dir/408.c.o
+/usr/bin/ranlib lib408.a

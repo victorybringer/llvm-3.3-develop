@@ -1,0 +1,47 @@
+要先切换到20.04的apt，安装1.1.0以上的openssl库以及cmake, autoconf
+
+要升级pip
+
+sudo pip install wllvm -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+tar -C /usr/local -xzf go1.15.2.linux-amd64.tar.gz
+
+export PATH=$PATH:/usr/local/go/bin       /etc/profile文件
+
+go get github.com/SRI-CSL/gllvm/cmd/...
+
+cabal haddock --internal --hyperlink-source  --executables
+
+
+apt install build-essential (可能)
+
+目前使用的是ubuntu 18.04的源
+
+
+1、curl
+   C语言
+   export LLVM_COMPILER=clang
+   CC=wllvm CXX=wllvm++ ./buildconf
+   CC=wllvm CXX=wllvm++ ./configure
+   CC=wllvm CXX=wllvm++  make
+
+
+   CC=gclang CXX=gclang++ CFLAGS=-g
+
+
+leveldb：
+mkdir -p build && cd build
+cmake -DCMAKE_BUILD_TYPE=Release .. && cmake --build .
+
+
+openssl:
+ln -s /usr/local/lib/libssl.so.3 /usr/lib/libssl.so.3
+ln -s /usr/local/lib/libcrypto.so.3 /usr/lib/libcrypto.so.3
+
+
+rapidjson
+删除-werror （3.4,3.5）
+删除-werror，CMAKE_CXX_FLAGS 添加-D__STRICT_ANSI__
+
+
+最佳组合：ubuntu 16.04 + apt-get install llvm-3.5(实际安装版本为3.5.2)

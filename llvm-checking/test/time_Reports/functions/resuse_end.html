@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html><head><title>resuse_end [function breakdown]</title>
+<link rel="stylesheet" href="../style.css" type="text/css">
+<link rel="stylesheet" href="../jquery.snippet.css" type="text/css">
+<script type="text/javascript" src="../jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../jquery.snippet.js"></script>
+<script type="text/javascript" src="../highlight.js"></script>
+</head>
+<body>Breakdown of resuse_end (defined in /root/文档/myTests/bench/time-1.7/resuse.c)
+<div><ul><li><span class="code-type">i32<a href="#" onclick="editor.highlightText('highlight', 'pid');">pid</a>
+</span>
+</li>
+<li><span class="code-type">%struct.RESUSE*<a href="#" onclick="editor.highlightText('highlight', 'resp');">resp</a>
+</span>
+</li>
+</ul>
+</div>
+<p>resuse_end (<span class="code-type">i32</span> pid</span>
+, <span class="code-type">%struct.RESUSE*</span> resp</span>
+) -> <span class="code-type">i32</span></p>
+<pre id="code" name="code">{
+  int status;
+
+#if HAVE_WAIT3
+  pid_t caught;
+
+  /* Ignore signals, but don&#39;t ignore the children.  When wait3
+     returns the child process, set the time the command finished. */
+  while ((caught = wait3 (&amp;status, 0, &amp;resp-&gt;ru)) != pid)
+    {
+      if (caught == -1)
+  return 0;
+    }
+
+  gettimeofday (&amp;resp-&gt;elapsed, (struct timezone *) 0);
+#else  /* !HAVE_WAIT3 */
+  long value;
+  struct tms tms;
+
+  pid = wait (&amp;status);
+  if (pid == -1)
+    return 0;
+
+  value = times (&amp;tms);
+
+  memset (&amp;resp-&gt;ru, 0, sizeof (struct rusage));
+
+  resp-&gt;ru.ru_utime.tv_sec = tms.tms_cutime / HZ;
+  resp-&gt;ru.ru_stime.tv_sec = tms.tms_cstime / HZ;
+
+#if HAVE_SYS_RUSAGE_H
+  resp-&gt;ru.ru_utime.tv_nsec = tms.tms_cutime % HZ * (1000000000 / HZ);
+  resp-&gt;ru.ru_stime.tv_nsec = tms.tms_cstime % HZ * (1000000000 / HZ);
+#else
+  resp-&gt;ru.ru_utime.tv_usec = tms.tms_cutime % HZ * (1000000 / HZ);
+  resp-&gt;ru.ru_stime.tv_usec = tms.tms_cstime % HZ * (1000000 / HZ);
+#endif
+
+  resp-&gt;elapsed.tv_sec = value / HZ;
+  resp-&gt;elapsed.tv_usec = value % HZ * (1000000 / HZ);
+#endif  /* !HAVE_WAIT3 */
+
+  resp-&gt;elapsed.tv_sec -= resp-&gt;start.tv_sec;
+  if (resp-&gt;elapsed.tv_usec &lt; resp-&gt;start.tv_usec)
+    {
+      /* Manually carry a one from the seconds field.  */
+      resp-&gt;elapsed.tv_usec += 1000000;
+      --resp-&gt;elapsed.tv_sec;
+    }
+  resp-&gt;elapsed.tv_usec -= resp-&gt;start.tv_usec;
+
+  resp-&gt;waitstatus = status;
+
+  return 1;
+}</pre>
+<script type="text/javascript">
+$(window).bind("load", function() {
+  $("pre#code").snippet("c", {style: "emacs", showNum: true, startNum: 68});
+  initializeHighlighting();
+  linkCalledFunctions([]);
+  });
+</script>
+</body>
+</html>
