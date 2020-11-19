@@ -1,6 +1,8 @@
 From ubuntu:trusty
 
 
+COPY sources.list /etc/apt
+
 COPY stack-2.5.1-linux-x86_64.tar.gz  /
 
 
