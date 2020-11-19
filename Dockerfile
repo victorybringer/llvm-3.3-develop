@@ -1,5 +1,8 @@
 From ubuntu:trusty
 
+RUN mkdir /root/.stack/
+
+COPY config.yaml   /root/.stack/
 
 COPY sources.list /etc/apt
 
